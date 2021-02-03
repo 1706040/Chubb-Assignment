@@ -1,0 +1,20 @@
+1) List all media of a particular film.
+Ans) select movies.name, movie_media.media_type, media.url from movies join media on movies.id=media.movie_id where movies.name = 'someMovieName';
+
+2) List all media and reviews of a particular film
+Ans) select movies.name, movie_media.media_type, movie_media.url, reviews.review from movies join movie_media on movies.id = movie_media.movie_id join
+     reviews on movies.id = reviews.movie_id where movies.name = 'someMovieName';
+
+
+3) List all artists and thier roles in a particular film.
+Ans) select movies.name, movie_roles.role, artists.name from movies join movie_roles on movies.id = movie_roles.movie_id join artists on 
+  movie_roles.artist_id = artists.id where movies.name = 'somename';
+
+4) List all the reviews given by a particular user.
+Ans) select users.name, reviews.review from users join reviews on users.id = reviews.user_id where users.name = 'somename';
+
+5) List all the skills of a particular artists.
+Ans) select artists.name, skills.skill from artists join artist_skills on artist.id = artist_skills.artist_id join skills on artist_skills.skill_id = skills.id where artists.name = 'someArtistName';
+
+6) List all the roles performed by a particular artist.
+Ans) select artists.name, movie_roles.role from artists join movie_roles on artists.id = movie_roles.artist_id where artists.name = 'someArtistName';
