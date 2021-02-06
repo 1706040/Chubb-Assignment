@@ -1,0 +1,26 @@
+
+
+SELECT * FROM `variants` where productId = 1;
+
+
+SELECT * from products join variants on products.productId = variants.productId;
+
+
+INSERT INTO variants VALUES (10, 123, 88123);
+INSERT INTO media VALUES (11232, 'abc.com/a.jpg', 10);
+INSERT INTO attribute VALUES (-1, 10, 'RAM', '1238 GB');
+
+
+SELECT * from media where variantId = 1.1;
+
+
+
+---------
+
+
+SELECT * from orders where customerId = 1;
+
+
+---------
+
+---------
