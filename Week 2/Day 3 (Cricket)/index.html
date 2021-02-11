@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    
+    <!-- Game name -->
+    <h4 class="cricHeading">Cricket 10</h4>
+    <hr>
+
+     <!-- score heading div -->
+    <div class="container-sm text-center">
+        <div class="row">
+            <div class="card-body" style="height: 8rem">
+               <h5 class="card-title">TEAM 1 SCORE</h5>
+               <h6 class="card-title" id="score1"> 0 </h6>
+               <button onclick="hit()" class="btn btn-primary bg-blue">HIT 1</button>
+            </div>
+            <div class="card-body" style="height: 8rem">
+                <h3 class="card-title">TIMER</h3>
+                <h1 id="timer">60</h1>
+             </div>
+            <div class="card-body" style="height: 8rem">
+                <h5 class="card-title">TEAM 2 SCORE</h5>
+                <h6 class="card-title" id="score2"> 0 </h6>
+                <button onclick="hit()" class="btn btn-primary bg-blue">HIT 2</button>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+     <!-- generate result button -->
+
+     <!-- score tables div -->
+    <div class="container-sm text-center">
+        <div class="row">
+            <div class="card-body" style="margin-left: 30px;">
+               <h5>TEAM 1 SCORE BOARD</h5>
+               <table width="100%">
+                    <tr>
+                        <th>TEAM 1</th>
+                        <th>B1</th>
+                        <th>B2</th>
+                        <th>B3</th>
+                        <th>B4</th>
+                        <th>B5</th>
+                        <th>B6</th>
+                        <th>TOTAL</th>
+                    </tr>
+                    <tr>
+                        <td>PLAYER 1</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PLAYER 2</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PLAYER 3</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PLAYER 4</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PLAYER 5</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PLAYER 6</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PLAYER 7</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PLAYER 8</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PLAYER 9</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PLAYER 10</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+               </table>
+            </div>
+            <div class="card-body">
+                <button class="btn btn-primary bg-blue" id="generateResult" type="button" disabled>GENERATE RESULT</button>
+                <br>
+                <br>
+                <h5 id="result">MATCH WON BY:</h5>
+                <br>
+                <h5 id="motm">MAN OF THE MATCH:</h5>
+             </div>
+            <div class="card-body" style="margin-right: 30px;">
+                <h5>TEAM 2 SCORE BOARD</h5>
+                <table width="100%">
+                    <tr>
+                        <th>TEAM 2</th>
+                        <th>B1</th>
+                        <th>B2</th>
+                        <th>B3</th>
+                        <th>B4</th>
+                        <th>B5</th>
+                        <th>B6</th>
+                        <th>TOTAL</th>
+                    </tr>
+                    <tr>
+                        <td>PLAYER 1</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PLAYER 2</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PLAYER 3</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PLAYER 4</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PLAYER 5</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PLAYER 6</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PLAYER 7</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PLAYER 8</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PLAYER 9</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PLAYER 10</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+               </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
